@@ -34,13 +34,13 @@ let windspeed = document.querySelector(".wind-speed")
 let humidity = document.querySelector(".humidity")
 let visibility = document.querySelector(".visibility-distance");
 let description = document.querySelector(".description");
-let date = document.querySelector("date")
+let date = document.querySelector(".date")
 
 fetchWeatherData();
 
 function updateWeather(data){
   cityElement.textContent = data.name;
-  tempreture.textContent = `${Math.round(data.main.temp)}`;
+  tempreture.textContent = `${Math.round(data.main.temp)}°C`;
   windspeed.textContent = `${data.wind.speed} km/h`;
   humidity.textContent = `${data.main.humidity}%`;
   visibility.textContent = `${data.visibility / 1000} Km`;
@@ -60,4 +60,8 @@ formElement.addEventListener("submit", function(e){
  let city =  inputElement.value;
  if(city !== '')
   fetchWeatherData(city);
+
+
+
+ 
 })
